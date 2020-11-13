@@ -30,7 +30,7 @@
     </header>
     <div class="container">
       <div class="row">
-        <div class="col-md-2 hour">
+        <div class="col-md-2 hour" data-hour="9AM">
           9AM
         </div>
         <div class="col-md-8">
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="10AM">
           10AM
         </div>
         <div class="col-md-8">
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="11AM">
           11AM
         </div>
         <div class="col-md-8">
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="12PM">
           12PM
         </div>
         <div class="col-md-8">
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="1PM">
           1PM
         </div>
         <div class="col-md-8">
@@ -95,7 +95,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="2PM">
           2PM
         </div>
         <div class="col-md-8">
@@ -108,7 +108,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="3PM">
           3PM
         </div>
         <div class="col-md-8">
@@ -121,7 +121,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="4PM">
           4PM
         </div>
         <div class="col-md-8">
@@ -134,7 +134,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 time-block hour">
+        <div class="col-md-2 hour" data-hour="5PM">
           5PM
         </div>
         <div class="col-md-8">
@@ -157,6 +157,27 @@
 
       // Display current date in Header
       $('#currentDay').append(moment().format("dddd, MMM Do"));
+
+      const now = moment();
+      const plannerTime = $('hour');
+      // console.log(m.format("hA"));
+      // console.log(m2);
+      // console.log(m2[0].innerHTML);
+
+      // $('.hour').text(function(index, text){
+      //   console.log(text);
+      // })
+
+      $('.row').each(function(index, elem){
+        var hourDiv = $(elem).find('.hour');
+        var hour = hourDiv.data('hour');
+        var textEntry = $(elem).find('textarea');
+
+        console.log(hour);        
+
+        // if (hour[] == isfuture set css to Color
+        // else if hour{} == iscurrent set css to color
+      })
        
       // main grid needs three columns
         // 9 rows for each hour between 9am - 5pm in first column
