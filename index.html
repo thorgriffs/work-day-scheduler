@@ -158,6 +158,12 @@
       // Display current date in Header
       $('#currentDay').append(moment().format("dddd, MMM Do"));
 
+      var schedulerData = {}
+      var storedScheduler = localStorage.getItem("scheduler");
+      if (storedScheduler) {
+        schedulerData = JSON.parse(storedScheduler);
+      }      
+      
       const now = moment();
       const plannerTime = $('hour');
       // console.log(m.format("hA"));
@@ -173,33 +179,30 @@
         var hour = hourDiv.data('hour');
         var entryHour = moment(hour, "hA");
         var textEntry = $(elem).find('textarea');
+        var setText = schedulerData[hour]
+        
+        if (setText) {
+          textEntry.val(setText);
+        }
 
         if (now.format("hA") === hour) {
           textEntry.addClass('present')
         }
         else if (entryHour.isBefore(now)){
           textEntry.addClass('past');
-        }
-        // else if (entryHour.isSame(now.fomrat("hA")){
-        //   textEntry.addClass('present');
-        // }
+        }        
         else {//(entryHour.isAfter(now)){
           textEntry.addClass('future');
         }
+      })    
+      
 
-
-
-      //  entryHour.isBefore(now)
-      //   console.log(hour); 
-
-
-
-        var textEntry = $(elem).find('textarea');
-
-             
-
-        // if (hour[] == isfuture set css to Color
-        // else if hour{} == iscurrent set css to color
+      $('.saveBtn').click(function(){
+        var saveButton = $(this);
+        var saveText = saveButton.closest(".row").find("textarea").val();
+        var saveHour = saveButton.closest(".row").find(".hour").data("hour");
+        schedulerData[saveHour] = saveText;
+        localStorage.setItem("scheduler", JSON.stringify(schedulerData))
       })
        
       // main grid needs three columns
