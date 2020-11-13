@@ -171,9 +171,32 @@
       $('.row').each(function(index, elem){
         var hourDiv = $(elem).find('.hour');
         var hour = hourDiv.data('hour');
+        var entryHour = moment(hour, "hA");
         var textEntry = $(elem).find('textarea');
 
-        console.log(hour);        
+        if (now.format("hA") === hour) {
+          textEntry.addClass('present')
+        }
+        else if (entryHour.isBefore(now)){
+          textEntry.addClass('past');
+        }
+        // else if (entryHour.isSame(now.fomrat("hA")){
+        //   textEntry.addClass('present');
+        // }
+        else {//(entryHour.isAfter(now)){
+          textEntry.addClass('future');
+        }
+
+
+
+      //  entryHour.isBefore(now)
+      //   console.log(hour); 
+
+
+
+        var textEntry = $(elem).find('textarea');
+
+             
 
         // if (hour[] == isfuture set css to Color
         // else if hour{} == iscurrent set css to color
