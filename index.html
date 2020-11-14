@@ -29,118 +29,118 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="9AM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="9AM">
           9AM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="10AM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="10AM">
           10AM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="11AM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="11AM">
           11AM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="12PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="12PM">
           12PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="1PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="1PM">
           1PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="2PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="2PM">
           2PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="3PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="3PM">
           3PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="4PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="4PM">
           4PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 hour" data-hour="5PM">
+      <div class="row no-gutters">
+        <div class="col-md-1 hour" data-hour="5PM">
           5PM
         </div>
-        <div class="col-md-8">
-          <textarea>Sample text</textarea>
+        <div class="col-md-10">
+          <textarea class="form-control"></textarea>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
           <button class="saveBtn">
             Save
           </button>
@@ -196,7 +196,7 @@
         }
       })    
       
-
+      // Save button click stores row entry in local storage. 
       $('.saveBtn').click(function(){
         var saveButton = $(this);
         var saveText = saveButton.closest(".row").find("textarea").val();
@@ -205,12 +205,9 @@
         localStorage.setItem("scheduler", JSON.stringify(schedulerData))
       })
        
-      // main grid needs three columns
-        // 9 rows for each hour between 9am - 5pm in first column
-        // Middle column contains onclick/onmouse? event to allow user to type alphanumeric text
-          // character limit??
+      
         // last column contains save button (onclick event)
-      // Save button click stores planner entry in local storage. 
+      
         // Data persists after page refresh....  
         // edit to existing entry does not automatically overwrite existing entry... it should only edit the existing data
         // allow delete of existing data
