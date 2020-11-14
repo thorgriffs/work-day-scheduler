@@ -45,4 +45,4 @@ The following images show the Work Day Scheduler appearance and functionality:
 
 
 ## Application URL
-* [Work Day Scheduler](https://thorgriffs.github.io/work-day-scheduler/))
+* [Work Day Scheduler](https://thorgriffs.github.io/work-day-scheduler/)
