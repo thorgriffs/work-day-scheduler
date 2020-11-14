@@ -31,7 +31,7 @@ This is an assignment to create a simple calendar application that allows a user
     * The text on the button is not clickable, only the area around the text.
     * (in general, I will be continuing to work on understanding how to style a button)
   * The alignment of the borders for each column were somewhat difficult to work with.  I was able to (mostly) make everthing align through trial and error, but would like to improve my capabilities here.
-  
+
 
 
 ## Screenshots
@@ -45,4 +45,4 @@ The following images show the Work Day Scheduler appearance and functionality:
 
 
 ## Application URL
-* [Work Day Scheduler]([Moment.js](https://momentjs.com/))
+* [Work Day Scheduler](https://thorgriffs.github.io/work-day-scheduler/))
