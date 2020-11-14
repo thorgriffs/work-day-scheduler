@@ -146,34 +146,30 @@
           </button>
         </div>
       </div>
-
-      <!-- Timeblocks go here -->
-      <!-- utilize bootstrap grid -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <script>
 
       // Display current date in Header
       $('#currentDay').append(moment().format("dddd, MMM Do"));
 
+      // Data from previous save persists on page refresh
       var schedulerData = {}
       var storedScheduler = localStorage.getItem("scheduler");
       if (storedScheduler) {
         schedulerData = JSON.parse(storedScheduler);
       }      
-      
+     
+      // Set variables for current time and plannertime (per row)
       const now = moment();
       const plannerTime = $('hour');
-      // console.log(m.format("hA"));
-      // console.log(m2);
-      // console.log(m2[0].innerHTML);
+      // console.log(m.format("hA")); 
 
-      // $('.hour').text(function(index, text){
-      //   console.log(text);
-      // })
-
+      // Compare now to planner time to determine past, present, future
+      // Apply css backgroun color based on past, present, future
       $('.row').each(function(index, elem){
         var hourDiv = $(elem).find('.hour');
         var hour = hourDiv.data('hour');
@@ -196,7 +192,7 @@
         }
       })    
       
-      // Save button click stores row entry in local storage. 
+      // Save button stores textarea data to local storage 
       $('.saveBtn').click(function(){
         var saveButton = $(this);
         var saveText = saveButton.closest(".row").find("textarea").val();
@@ -204,16 +200,6 @@
         schedulerData[saveHour] = saveText;
         localStorage.setItem("scheduler", JSON.stringify(schedulerData))
       })
-       
-      
-        // last column contains save button (onclick event)
-      
-        // Data persists after page refresh....  
-        // edit to existing entry does not automatically overwrite existing entry... it should only edit the existing data
-        // allow delete of existing data
-      // Compare current time to time in the grid to determine if entries are current, past, or future
-        // apply color coding based on status
-        // assume this involves using moment.js?
     </script>
   </body>
 </html>
