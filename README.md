@@ -10,7 +10,7 @@ This is an assignment to create a simple calendar application that allows a user
 * Updated the provided `index.html` and `style.css` files
 * Utilized the Bootstrap grid system to create the main calendar display
   * Added a column with a `.data-hour` attribute to identify the "time" for each calendar row
-  * Added a `textarea` column to hold the user entered text
+  * Added a `textarea` column for user entered text
   * Added a `button` to allow the user to save the `textarea` data
 * Utilized the `.click()` jQuery method to save data to `localStorage`
 * Added a conditional check on page refresh to pull data from `localStorage` if available
@@ -31,6 +31,7 @@ This is an assignment to create a simple calendar application that allows a user
     * The text on the button is not clickable, only the area around the text.
     * (in general, I will be continuing to work on understanding how to style a button)
   * The alignment of the borders for each column were somewhat difficult to work with.  I was able to (mostly) make everthing align through trial and error, but would like to improve my capabilities here.
+  * The page is not responsive.  It does not render well at smaller screen sizes. 
 
 
 
